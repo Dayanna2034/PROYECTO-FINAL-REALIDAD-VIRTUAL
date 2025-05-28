@@ -235,6 +235,13 @@ window.addEventListener("gamepadconnected", (event) => {
   revisarGamepad(); // Iniciar el loop de revisión
 });
 
+
+// === MÚSICA DE FONDO ===
+const musicaFondo = new Audio('Texturas/Musica.mp3');
+musicaFondo.loop = true;
+musicaFondo.volume = 0.15;
+let musicaIniciada = false;
+
 // Revisión constante del estado del gamepad
 function revisarGamepad() {
   const gamepad = navigator.getGamepads()[gamepadIndex];
@@ -244,6 +251,13 @@ function revisarGamepad() {
 
     // Si R2 está presionado y se permite disparar
     if ((r2.pressed || r2.value > 0.5) && puedeDisparar) {
+
+      // Iniciar música solo una vez
+      if (!musicaIniciada) {
+        musicaFondo.play();
+        musicaIniciada = true;
+      }
+
       disparar();
       puedeDisparar = false; // Bloquear hasta que se suelte
     }
@@ -371,6 +385,8 @@ function verificarControl() {
     }
   }
 }
+
+
 
 
 

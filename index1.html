@@ -2,25 +2,42 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Inicio Juego</title>
-    <style>
-        body {
-            margin: 0;
-        }
-    </style>
+  <meta charset="utf-8">
+  <title>Juego</title>
+  <style>
+    body {
+      margin: 0;
+    }
+  </style>
 </head>
 
 <body>
-    <script type="importmap">
+
+  <script type="importmap">
             {
               "imports": {
                 "three": "https://cdn.jsdelivr.net/npm/three@v0.149.0/build/three.module.js",
                 "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.149.0/examples/jsm/"
               }
             }
-        </script>
-    <script type="module" src="Juego.js"></script>
+          </script>
+
+  <script type="module" src="Juego.js"></script>
+
+  <div id="aciertos" style="
+      position: absolute;
+  top: 10px;
+  right: 615px;
+  color: rgb(0, 0, 0);
+  font-size: 24px;
+  font-family: Arial, sans-serif;
+  background-color: rgba(241, 0, 0, 0.5);
+  padding: 8px 12px;
+  border-radius: 8px;
+  z-index: 1;">
+    Aciertos: 0
+  </div>
+
 </body>
 
 </html>
